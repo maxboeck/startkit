@@ -4,7 +4,7 @@ do_action('get_header');
 ?>
 
 <header class="header" role="banner">
-  <div class="container">
+  <div class="header__inner container">
 
     <a class="header__brand" href="<?= esc_url(home_url('/')); ?>">
       <?php bloginfo('name'); ?>

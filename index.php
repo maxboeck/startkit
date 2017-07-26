@@ -1,5 +1,6 @@
 <?php get_template_part('templates/header'); ?>
   <main id="main" class="main" role="main">
+    <div class="container">
 
       <?php get_template_part('templates/page/page', 'header'); ?>
 
@@ -15,6 +16,6 @@
       <?php endwhile; ?>
 
       <?php the_posts_navigation(); ?>
-
+    </div>
   </main>
 <?php get_template_part('templates/footer'); ?>
