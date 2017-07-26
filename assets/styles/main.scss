@@ -1,0 +1,32 @@
+//--------------------
+// VARIABLES & MIXINS
+// stuff that does not produce any CSS
+//--------------------
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/functions";
+
+//--------------------
+// BASE STYLES
+// styles with a global scope
+//--------------------
+@import "base/fonts";
+@import "base/normalize";
+@import "base/reboot";
+
+@import "base/layout";
+@import "base/typography";
+@import "base/helpers";
+
+//--------------------
+// COMPONENTS
+// styles directly related to a component
+//--------------------
+@import "components/header";
+
+
+//--------------------
+// VENDOR
+// third-party stuff
+//--------------------
+@import "vendor/bootstrap";

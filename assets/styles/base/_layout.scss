@@ -1,0 +1,28 @@
+//Basic Site Layout
+
+.site {
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height:100%;
+  overflow-x:hidden;
+
+  .main {
+    // stick footer to page bottom
+    // @see https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+    flex: 1 0 auto;
+    width:100%;
+
+    &::after {
+      content: '\00a0'; /* &nbsp; */
+      display: block;
+      height: 0px;
+      visibility: hidden;
+    }
+  }
+
+  .header, 
+  .footer {
+    flex: none;
+  }
+}

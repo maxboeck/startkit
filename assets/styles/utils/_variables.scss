@@ -1,0 +1,63 @@
+//--------------------
+// SCSS VARIABLES
+//--------------------
+
+//default bootstrap variables,
+//override where necessary
+@import "~bootstrap/scss/variables";
+
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  md: 768px,
+  lg: 1200px
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 1176px
+);
+
+// Z-Index Stack
+//
+// Control the order of layers in the application
+$z-layers: (
+  "header": 100,
+  "content-overlay": 25,
+  "content": 1
+);
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+ 
+$font-family-sans-serif:     "Open Sans", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Noto Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-serif:          Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:      Menlo, Monaco, Consolas, "Andale Mono", "Courier New", monospace;
+
+$font-family-base:           $font-family-sans-serif;
+
+$font-size-root:             100%;
+$font-size-base:             1rem;
+
+$line-height:                1.375;
+$leading:                    round(16 * $line-height);
+
+
+// Animation
+//
+// Default easing curves, Transitions, etc
+
+$animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);
+$animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);
+$animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);
+
+$animation-curve-default: $animation-curve-fast-out-slow-in;

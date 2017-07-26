@@ -1,0 +1,46 @@
+// Main Typography Styles
+
+//
+// Paragraphs
+//
+
+p:not(:last-child) {
+  margin-bottom:1rem;
+}
+
+//
+// Links
+//
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover, &:focus {
+    outline:0;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+
+//
+// Text Utilities
+//
+.text--left {
+  text-align:left;
+}
+.text--center {
+  text-align:center;
+}
+.text--right {
+  text-align:right;
+}
+.text--hyphenate {
+ -ms-word-break: break-all;
+     word-break: break-all;
+     // Non standard for webkit
+     word-break: break-word;
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+	hyphens: auto;
+}

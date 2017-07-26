@@ -1,0 +1,84 @@
+# Copyright (C) 2017 startkit
+# This file is distributed under the same license as the startkit package.
+msgid ""
+msgstr ""
+"Project-Id-Version: startkit\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Max Böck\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:7
+msgid "The page you are trying to view could not be found."
+msgstr ""
+
+#: functions.php:35
+msgid "Error locating %s for inclusion"
+msgstr ""
+
+#: inc/base/assets.php:10
+msgid "Asset Directory Constant \"ASSETS_DIR\" is not defined."
+msgstr ""
+
+#: inc/base/filters.php:46
+msgid "Read More"
+msgstr ""
+
+#: inc/base/icons.php:40
+msgid "Please define default parameters in the form of an array."
+msgstr ""
+
+#: inc/base/icons.php:44
+msgid "Please define an SVG icon filename."
+msgstr ""
+
+#: inc/base/misc.php:57
+msgid "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/\">upgrade your browser here</a> to improve your experience."
+msgstr ""
+
+#: inc/base/setup.php:17
+msgid "Primary Navigation"
+msgstr ""
+
+#: inc/base/setup.php:38
+msgid "Primary"
+msgstr ""
+
+#: inc/base/titles.php:13
+msgid "Latest Posts"
+msgstr ""
+
+#: inc/base/titles.php:18
+msgid "Search Results for %s"
+msgstr ""
+
+#: inc/base/titles.php:20
+msgid "Not Found"
+msgstr ""
+
+#: inc/custom/disable.php:102
+msgid "Only authenticated users can access the REST API."
+msgstr ""
+
+#: index.php:8
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: templates/footer.php:10
+msgid "All rights reserved."
+msgstr ""
+
+#: templates/html-header.php:10
+msgid "skip to content"
+msgstr ""
+
+#: templates/post/post-meta.php:3
+msgid "By"
+msgstr ""
