@@ -5,10 +5,10 @@ module.exports = {
   },
   main: {
     css: [
-      'assets/styles/main.scss'
+      'assets/styles/main.scss',
     ],
     js: [
-      'assets/scripts/main.js'
+      'assets/scripts/main.js',
     ],
   },
   globs: {
@@ -22,5 +22,5 @@ module.exports = {
   i18n: {
     textDomain: 'startkit',
     dest: './lang',
-  }
-};
+  },
+}
