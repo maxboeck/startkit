@@ -26,14 +26,35 @@ $container-max-widths: (
   lg: 1176px
 );
 
-// Z-Index Stack
+// Colors
 //
-// Control the order of layers in the application
-$z-layers: (
-  "header": 100,
-  "content-overlay": 25,
-  "content": 1
-);
+// Grayscale.
+
+$gray-dark:                 #373a3c;
+$gray:                      #55595c;
+$gray-light:                #818a91;
+$gray-lighter:              #eceeef;
+$gray-lightest:             #f7f7f9;
+
+// Brand Colors
+
+$brand-cyan:                 #43a9a3;
+
+// Link Colors
+//
+// Style anchor elements.
+
+$link-color:                 $brand-cyan;
+$link-decoration:            none;
+$link-hover-color:           darken($link-color, 5%);
+$link-hover-decoration:      none;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                    #F9FAFC;
+$body-color:                 $gray-dark;
 
 // Typography
 //
@@ -50,6 +71,16 @@ $font-size-base:             1rem;
 
 $line-height:                1.375;
 $leading:                    round(16 * $line-height);
+
+
+// Z-Index Stack
+//
+// Control the order of layers in the application
+$z-layers: (
+  "header": 100,
+  "content-overlay": 25,
+  "content": 1
+);
 
 
 // Animation

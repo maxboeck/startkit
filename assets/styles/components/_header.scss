@@ -3,5 +3,17 @@
  */
 
 .header {
-  color:brown;
+  padding:1rem 0;
+  box-shadow:0 2px 20px rgba(0,0,0,0.15);
+
+  &__inner {
+    display:flex;
+    align-items: center;
+  }
+
+  &__brand {
+    font-weight:700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
 }
