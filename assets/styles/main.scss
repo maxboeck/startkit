@@ -13,7 +13,6 @@
 @import "base/fonts";
 @import "base/normalize";
 @import "base/reboot";
-
 @import "base/layout";
 @import "base/typography";
 @import "base/helpers";
@@ -23,6 +22,7 @@
 // styles directly related to a component
 //--------------------
 @import "components/header";
+@import "components/icon";
 @import "components/footer";
 @import "components/wp-classes";
 
