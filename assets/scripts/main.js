@@ -3,10 +3,8 @@ import $ from 'jquery';
 
 const App = {
   init() {
-    console.log('App init.');
+    console.log('main.js running');
   },
 };
 
-(() => {
-  App.init()
-})();
+App.init();
