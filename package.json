@@ -14,12 +14,12 @@
     }
   ],
   "browserslist": [
-    "> 1%",
+    "> 5%",
     "last 2 versions",
     "IE 10"
   ],
   "engines": {
-    "node": ">= 4.5"
+    "node": ">= 6.0"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
