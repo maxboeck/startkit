@@ -85,7 +85,7 @@ function get_svg_icon($args = array()) {
  */
 function favicons() {
 	$favicon = get_parent_theme_file_path( '/dist/images/favicon/favicon.ico' );
-	if(!file_exists( $favicon )){
+	if(!defined('ASSETS_DIR') || !file_exists( $favicon )){
 		return false;
 	}
 

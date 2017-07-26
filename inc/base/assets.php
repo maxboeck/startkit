@@ -77,6 +77,7 @@ add_action('wp_head', __NAMESPACE__ . '\\jquery_local_fallback');
 function ga_snippet() {
   if(
     !defined('ANALYTICS_ID') ||
+    ANALYTICS_ID === 'UA-XXXXXXX-XX' ||
     current_user_can( 'manage_options' ) || 
     is_development_env()
   ) return;

@@ -11,6 +11,7 @@ function clean_admin_menu(){
   
   remove_menu_page( 'edit-comments.php' );
   remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
+  remove_submenu_page( 'themes.php', 'theme-editor.php' );
   
 }
 add_action('admin_menu', __NAMESPACE__ . '\\clean_admin_menu');

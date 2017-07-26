@@ -14,7 +14,8 @@ function setup() {
 
   // Register wp_nav_menu() menus
   register_nav_menus([
-    'primary_navigation' => __('Primary Navigation', 'startkit')
+    'primary_navigation' => __('Primary Navigation', 'startkit'),
+    'footer_links' => __('Footer Links', 'startkit')
   ]);
 
   // Enable post thumbnails

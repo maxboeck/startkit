@@ -35,7 +35,7 @@ class NavWalker extends \Walker_Nav_Menu {
     if ($element->is_subitem) {
       foreach ($children_elements[$element->ID] as $child) {
         if ($child->current_item_parent || url_compare($this->archive, $child->url)) {
-          $element->classes[] = 'active';
+          $element->classes[] = 'nav__item--active';
         }
       }
     }
@@ -43,7 +43,7 @@ class NavWalker extends \Walker_Nav_Menu {
     $element->is_active = (!empty($element->url) && strpos($this->archive, $element->url));
 
     if ($element->is_active) {
-      $element->classes[] = 'active';
+      $element->classes[] = 'nav__item--active';
     }
 
     parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
@@ -58,25 +58,25 @@ class NavWalker extends \Walker_Nav_Menu {
 
       if ($this->archive) {
         if (url_compare($this->archive, $item->url)) {
-          $classes[] = 'active';
+          $classes[] = 'nav__item--active';
         }
       }
     }
 
     // Remove most core classes
-    $classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', 'active', $classes);
+    $classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', 'nav__item--active', $classes);
     $classes = preg_replace('/^((menu|page)[-_\w+]+)+/', '', $classes);
 
-    // Re-add core `menu-item` class
-    $classes[] = 'menu-item';
+    // Re-add core `nav__item` class
+    $classes[] = 'nav__item';
 
-    // Re-add core `menu-item-has-children` class on parent elements
+    // Re-add core `nav__item--has-children` class on parent elements
     if ($item->is_subitem) {
-      $classes[] = 'menu-item-has-children';
+      $classes[] = 'nav__item--has-children';
     }
 
     // Add `menu-<slug>` class
-    $classes[] = 'menu-' . $slug;
+    $classes[] = 'nav__item--' . $slug;
 
     $classes = array_unique($classes);
     $classes = array_map('trim', $classes);
@@ -94,6 +94,8 @@ class NavWalker extends \Walker_Nav_Menu {
 function nav_menu_args($args = '') {
   $nav_menu_args = [];
   $nav_menu_args['container'] = false;
+  $nav_menu_args['item_spacing'] = 'discard';
+  $nav_menu_args['menu_class'] = 'nav__menu';
 
   if (!$args['items_wrap']) {
     $nav_menu_args['items_wrap'] = '<ul class="%2$s">%3$s</ul>';
