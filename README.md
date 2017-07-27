@@ -35,13 +35,7 @@ startkit/
 │   ├── icons/            # → SVG icon files
 │   ├── images/           # → Theme images and favicons
 │   ├── scripts/          # → Theme javascript
-│   │   └── main.js       # → Main JS bundle index
-│   └── styles/           # → Theme SCSS
-│       ├── utils/        # → Variables and mixins
-│       ├── base/         # → Common styles (_reset, _typography...)
-│       ├── components/   # → BEM components (_header, _post ...)
-│       ├── vendor/       # → Third-party imports (e.g. bootstrap)
-│       └── main.scss     # → Main CSS bundle index
+│   └── styles/           # → Theme SCSS files
 ├── dist/                 # → Asset build directory
 ├── functions.php         # → Main function index (loads includes)
 ├── gulpfile.js           # → Gulpfile (loads build tasks)
@@ -99,17 +93,82 @@ The following commands can be issued in the theme root directory to perform buil
 
 ## CSS Architecture
 
-SCSS Partials
-BEM Naming Method, 
-Tilde Importer for Sass `@import`s from node_modules
-Bootstrap 4
+Styles are written in SCSS (Sass). Include your partials in `assets/styles`, then @import them in `main.scss`. StartKit provides very little styling out of the box, it is up to you to customize it.
+
+Classnames follow the [BEM naming scheme](http://getbem.com/). Components like `.header` or `.post` typically get their own partial in the `/components` folder. As a convention, partials should be named after the root component class so they can be found easily.
+
+```
+assets/styles
+├── utils/                # → Utilities (generates no CSS)
+│   ├── variables.scss
+│   ├── mixins.scss
+│   └── functions.scss
+├── base/                 # → Common shared styles (global scope)
+│   ├── normalize.scss
+│   ├── reboot.scss
+│   ├── layout.scss
+│   ├── typography.scss
+│   └── helpers.scss
+├── components/           # → Component-specific CSS (BEM scoped)
+│   ├── header.scss
+│   └── icon.scss   
+├── vendor/               # → Third-Party stuff
+│   └── bootstrap.scss    # → Imports bootstrap4 partials
+└── main.scss             # → Main index
+```
+
+### CSS Frameworks
+
+You can add other third-party frameworks in `/styles/vendor/`. It's possible to include packages downloaded via npm if you reference them with a `~` (tilde). 
+
+[Bootstrap 4](https://v4-alpha.getbootstrap.com/) is included as a dependency, but not imported in the main stylesheet. To reduce bloat, it is recommended to seperately import only the parts you need. For example, if you want to use just bootstrap grid:
+
+```scss
+/* styles/vendor/_bootstrap.scss */
+@import "~bootstrap/scss/grid";
+```
+
+All Bootstrap variables and mixins are available, and can be overwritten/extended in StartKit's own `utils/variables` and `utils/mixins` files.
 
 ## Javascript Architecture
 
-ES6/Babel, 
-Main Bundle imports from src, 
-optional Vendor Bundle, 
-jQuery external from CDN with fallback
+StartKit supports ES6. It will be transpiled by babel and run through webpack. As the goal is to reduce the number of script requests in WordPress, it is encouraged to write Javascript as modules in `scripts/src/`, which are then imported in `scripts/main.js`. This file serves as the main entry point for webpack. Everything in there is bundled together, minified and output as `dist/main.min.js`.
+
+If you need to define a separate bundle, add a new entry file to `/scripts` and edit `tasks/_config.js` to tell webpack about it:
+
+```js
+//_config.js
+...
+main: {
+  css: [
+    'assets/styles/main.scss',
+  ],
+  js: [
+    'assets/scripts/main.js',
+    //add a new bundle entry file
+    'assets/scripts/vendor.js',
+  ],
+},
+...
+```
+
+This will then produce a `dist/vendor.min.js` file you need to enqueue in WordPress.
+You can find the script enqueue function in `inc/base/assets.php`:
+
+```php
+function enqueue() {
+  // Enqueue the new bundle
+  wp_enqueue_script('vendor_scripts', ASSETS_DIR . '/scripts/vendor.min.js', ['jquery'], null, true);
+}
+```
+
+### jQuery
+
+Per default, jQuery is included as an external dependency and served via CDN. There is also an automatic local fallback, in case the CDN should be unavailable. You can use jQuery in your scripts with `jQuery` or the `$` alias.
+
+### ESLint
+
+ESLint is available for linting. The default ruleset relies on [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base), feel free to edit this to your preferred coding style in `.eslintrc.json`.
 
 ## SVG Icon System
 
