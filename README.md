@@ -132,7 +132,7 @@ All Bootstrap variables and mixins are available, and can be overwritten/extende
 
 ## Javascript Architecture
 
-StartKit supports ES6. It will be transpiled by babel and run through webpack. As the goal is to reduce the number of script requests in WordPress, it is encouraged to write Javascript as modules in `scripts/src/`, which are then imported in `scripts/main.js`. This file serves as the main entry point for webpack. Everything in there is bundled together, minified and output as `dist/main.min.js`.
+StartKit supports ES6. It will be transpiled by babel and run through webpack. As the goal is to reduce the number of script requests in WordPress, it is encouraged to write Javascript as modules in `scripts/src/`, which are then imported in `scripts/main.js`. This file serves as the main entry point for webpack. Everything in there is bundled together, minified and output as `dist/scripts/main.min.js`.
 
 If you need to define a separate bundle, add a new entry file to `/scripts` and edit `tasks/_config.js` to tell webpack about it:
 
@@ -150,7 +150,7 @@ main: {
 },
 ```
 
-This will then produce a `dist/vendor.min.js` file you need to enqueue in WordPress.
+This will then produce a `dist/scripts/vendor.min.js` file you need to enqueue in WordPress.
 You can find the script enqueue function in `inc/base/assets.php`:
 
 ```php
