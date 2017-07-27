@@ -138,7 +138,6 @@ If you need to define a separate bundle, add a new entry file to `/scripts` and 
 
 ```js
 //_config.js
-...
 main: {
   css: [
     'assets/styles/main.scss',
@@ -149,7 +148,6 @@ main: {
     'assets/scripts/vendor.js',
   ],
 },
-...
 ```
 
 This will then produce a `dist/vendor.min.js` file you need to enqueue in WordPress.
